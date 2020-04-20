@@ -39,20 +39,46 @@ dh
 ```
 Then reading the columns: `abcdefgh`
 
-### Rearranging: Variants of Skip
+#### Rearranging: Variants of Skip
 There are plenty of variants to skip that play games with how many to skip at a time, which is why you'll see many online. For example, you can use a passcode to change _n_ after each character, you have a **transposition cipher** https://www.dcode.fr/transposition-cipher. You also can change _n_ in a clever way using a  **rail fence cipher** https://en.wikipedia.org/wiki/Rail_fence_cipher. Also, you don't always have to go from left to right, top to bottom, but the direction can change as well as in a **route/path cipher** https://www.dcode.fr/route-cipher. And there are many, many, more. The point here is that you may need to brute force trying different techniques until one "clicks." Luckily, there are many online tools to try out.
 
-### Substitution: Rotating number of characters
+#### Substitution: Rotating number of characters
 You can encrypt a message by "rotating" a certain number of characters. Here, "rotating" means exchange every letter for one _n_ letters away on the alphabet. For example, recalling Arthur C. Clarke & Stanley Kubric, the letters `HAL` can be rotated 1 letter to give us `IBM`. The letter after `h` is `i`, and so one. The letter after `z` is `a`. This is called a **ROT cipher** https://www.dcode.fr/rot-cipher, the most common being **ROT13** or **Ceasar cipher**. Decrypting and encrypting  are the same, it's just that the decrypting and encrypting rotations have to equal 26. So **ROT1** encoding can be docded with **ROT25**. That's why **ROT13** is popular - it is encorypted and decrypted in the same way. Alternatively, you can encrypt a message by rotating _n_ to the left then decode by rotating _n_ to the right.
 
-### Substitution: Variants on ROT ciphers
+#### Substitution: Variants on ROT ciphers
 You can change the _n_ of the substitution with every character. For example, if you have a password, you can use that to 
-encrypt and decrypt a message. This is called **viginere cipher** https://www.dcode.fr/vigenere-cipher.
+encrypt and decrypt a message. This is called **viginere cipher** https://www.dcode.fr/vigenere-cipher. I can use the password `hello` to encrypt a message, `this is a message`. First, convert `hello` in to the corresponding numbers of the letters that make up password: `h,e,l,l,o` is `8,5,12,12,15`. Then rotate the message by the corresponding numbers to the right
+```
+msg: t  h  i  s    i  s    a    m  e  s  s  a  g  e
+ROT: 8  5 12 12   15  8    5   12 12 15  8  5 12 12
+out: a  l  t  d    w  z    e    x  p  g  z  e  r  p
+```
+so `this is a message` encrpyted with the password `hello` is `altd wz e xpgzerp`. To decrypt, rotate each character in the encrypted message to the left by the corresponding number of the password.
 
+Like skip ciphers, there are many variants, and some times brute force approaches are necessary.
 
-#### Shift
 
 ### Common encoding techniques
+You can represent a message by changing the encoding of the message. Think of it as changing the character set from standard letters and numbers (a-z A-Z 0-9, or 62 different characters) to something else. There are many, many ways, but here are some common ones:
+
+#### Morse Code
+Famous way of representing letters and numbers as dots, dashes, and spaces. https://www.dcode.fr/morse-code
+
+#### ASCII Code
+There is a standard way or representing letters in binary so computers can understand them called "ASCII". This represents every character as a number https://en.wikipedia.org/wiki/ASCII http://www.asciitable.com/. Once you have that number, you can represent that number many different ways: as a binary number, decimal number, octal number, or hexadecimal number. For example `a` is `91` in decimal, which is `61` in hexadecimal (hex), `141` in octal, and `01100001` in binary. There are plenty of online tools to encode and decode for you, for example: https://multidec.web-lab.at/mc.php.
+
+How do you recognize an ASCII code in a particular base?
+
+* Decimal: number values ranging from 32 to 126 are "printable" ASCII characters.
+* Hex: Are two-character sequences consisting of a digit and a letter from A-F. Printable characters have the first digit in the range of 2-7. (i.e, `30` is corresponds to the number 0.
+* Octal: 3 digit numbers consisting of the digits 0-7. Printable characters start at 040 and end at 176.
+* Binary: 7 digit or 8 digit sequence of 1s and 0s. If 8 digit sequence, the first digit is a 0.
+
+
+#### A1Z26
+
+#### Base64 (and other BaseN) coding
+
 
 ## Welcome to GitHub Pages
 
