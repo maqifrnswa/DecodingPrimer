@@ -7,6 +7,13 @@ This is an intro on how one can start getting into decoding games. While there a
    1. "Encoding"
 1. Recognize/guess starting points when you find an encrypted/encoded message
 
+Then you can use tools such as:
+* [cryptii](https://cryptii.com/)
+* [MultiDec](https://multidec.web-lab.at/)
+* [dcode.fr](https://www.dcode.fr/)
+* [decodeingress.me](https://tools.decodeingress.me/#/)
+
+
 ## How to encrypt/encode a message
 
 To figure out how to decode, you first have to know how messages are encoded in the first place. To make things easier, you can think of encoding as some combination of the following 2 processes:
@@ -40,6 +47,12 @@ Then reading the columns: `abcdefgh`
 
 #### Rearranging: Variants of skip cipher
 There are plenty of variants to skip that play games with how many to skip at a time, which is why you'll see many online. For example, you can use a passcode to change _n_ after each character, you have a **transposition cipher** [https://www.dcode.fr/transposition-cipher](https://www.dcode.fr/transposition-cipher). You also can change _n_ in a clever way using a  **rail fence cipher** [https://en.wikipedia.org/wiki/Rail_fence_cipher](https://en.wikipedia.org/wiki/Rail_fence_cipher). Also, you don't always have to go from left to right, top to bottom, but the direction can change as well as in a **route/path cipher** [https://www.dcode.fr/route-cipher](https://www.dcode.fr/route-cipher). And there are many, many, more. The point here is that you may need to brute force trying different techniques until one "clicks." Luckily, there are many online tools to try out.
+
+#### Rearranging: regex.ingress.codes to check if you have a keyword in your text
+
+Sometimes you get a bunch of letters and number but don't know if you are at the final step or what kind of rearrangement is needed. There's a trick you can use! If you have a list of possible words that exist in your code, you can use regular expressions (regex) to search the list of possible keywords that use the letters you have! For examle, in Ingress, daily codes have the format `aaa##keyword###aa`. You can therefore use regex to see if a keyword is present. List of keywords are matinained at several places (e.g., [ingress.codes](https://ingress.codes)), so you can either download and maintain the list yourself or use an internet appication like [regex.ingress.codes](https://regex.ingress.codes). To search using regex, type `^[yourlistofcharacters]{6}$` where you replace the 6 in `{6}` with the number of letters that will appear in the keyword. More documentation available [here](https://ingress.codes/2016/12/08/passcode-keyword-finder/) and [here](https://decodeingress.me/2014/09/02/code-breaking-101-keyword-guessing/).
+
+As an example: after decoding and decrypting, you get `te68o5erezim2tk8uf` and want to know if there's a keyword in it. There are 5 numbers, so it matches the format. There are 13 letters, 5 of which are part of the prefix and suffix, so the keyword is 8 letters long. We therefore enter `^[te68o5erezim2tk8uf]{8}$` in to [regex.ingress.codes](https://regex.ingress.codes). It will find all keywords that are 8 characters long and are made up only of the letters in our text string. The result: `timezero`. So we know that we have a good passcode with a keyword of timezero and just have to figure out how to rearrange the characters to get it!
 
 #### Substitution: Rotating number of characters, ROT ciphers
 You can encrypt a message by "rotating" a certain number of characters. Here, "rotating" means exchanging every letter for one _n_ letters away on the alphabet. For example, recalling Arthur C. Clarke & Stanley Kubric, the letters `HAL` can be rotated 1 letter to give us `IBM`. The letter after `h` is `i`, and so one. The letter after `z` is `a`. This is called a **ROT cipher** [https://www.dcode.fr/rot-cipher](https://www.dcode.fr/rot-cipher), the most common being **ROT13** or **Caesar cipher**. Decrypting and encrypting  are the same, it's just that the decrypting and encrypting rotations have to equal 26. So **ROT1** encrypting can be decrypted with **ROT25**. That's why **ROT13** is popular - it is encrypted and decrypted in the same way. Alternatively, you can encrypt a message by rotating _n_ to the left then decode by rotating _n_ to the right.
@@ -92,7 +105,7 @@ There are many other variants of baseN that encode 1s and 0s (or the ASCII binar
 
 ## Steps to decode/decrypt a message
 Now that we get the "building blocks" for encoding, we can approach decoding!
-1. Do you have characters in the format you expect? For daily codes the game Ingress, your final code will be of the format: aaa##keyword###aa, that is 5 digits and the rest letters. So do you have 5 numbers and the rest letters? If so, use the **cipher** decryption methods above to translate and substitute until you have the solution. You may need a **password** to use some decryption methods (e.g., Vigenere), which may be hidden somewhere else.
+1. Do you have characters in the format you expect? For daily codes in the game Ingress, your final code will be of the format: aaa##keyword###aa, that is 5 digits and the rest letters. So do you have 5 numbers and the rest letters? If so, use the **cipher** decryption methods above to translate and substitute until you have the solution. You may need a **password** to use some decryption methods (e.g., Vigenere), which may be hidden somewhere else.
 1. If you don't have the right/expected characters, you can try decoding the message using the **coding** schemes listed above. Manipulating it should give you something with characters and numbers as expected.
 1. Go to step 1 until there is a solution.
 
