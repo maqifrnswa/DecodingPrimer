@@ -98,7 +98,7 @@ Now that we get the "building blocks" for encoding, we can approach decoding!
 
 ### Example
 Let's check out `IXRuZW1uZXRoZ2lsbkUgZWh0IG5pb0o=` from our intro paragraph.
-1. It is unrecognizable text, but it consists only of a-z, A-Z, and ends in an equal sign - so maybe it's base64 **coding**! Use dcode.fr's base64 decoder and see what happens.
+1. It is unrecognizable text, but it consists only of a-z, A-Z, 0-9, and ends in an equal sign - so maybe it's base64 **coding**! Use dcode.fr's base64 decoder and see what happens.
 1. Now I have something with punctuation, spaces, lower case letters, and one upper case letter - like a sentence! But the order seems wierd - the punctiation is at the front and the capital letter is in the back. This looks like the reverse **cipher**! Use dcode.fr or other tool to help you reverse it!
 
 ## Conculsion and Summary
