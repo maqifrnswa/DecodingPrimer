@@ -85,7 +85,7 @@ Any string of binary numbers can be represented as "printable" characters using 
 How to recognize base64?
 * Consists of lower and uppercase letters a-z, A-Z, numbers 0-9, plus sign and slash + /, and equal sign =
 * If the last characters are equal signs, it is almost always base64 (or base32, see below).
-* Example: `hello!` is `aGVsbG8=`
+* Example: `hello` is `aGVsbG8=`
 
 
 There are many other variants of baseN that encode 1s and 0s (or the ASCII binary 1s and 0s) into other characters. It is good to research and get familiar with those on cyberchef, cryptii, and dcode.fr. What characters are used with which? For example, base32 uses only capital letters A-Z, numbers 2-7, and the equal sign =. [https://www.dcode.fr/base-32-encoding](https://www.dcode.fr/base-32-encoding)
