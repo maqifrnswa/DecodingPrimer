@@ -6,13 +6,12 @@ This is an intro on how one can start getting in to decoding games. While there 
    1. "Encrypting"
    1. "Encoding"
 1. Recognize/guess starting points when you find an encrypted/encoded message
-1. Give starting points for what to do when it is not clear
 
 ## How to encrypt/encode a message
 
 To figure out how to decode, you first have to know how a messages are encoded in the first place. To make things easier, you can think of encoding as some combination of the following 2 processes:
 
-* **Encrypting** is taking the message and rearranging or substituting the characters to hide a message. In other words, encrypting keeps the same _character set_ (e.g., ASCII characters a-z A-Z and arabic numerals 0-9) but changes their meaning or order. For example, reversing the order of characters would encrypt `hello` as `olleh`. These methods are called **ciphers**
+* **Encrypting** is taking the message and rearranging or substituting the characters to hide a message. In other words, encrypting keeps the same _character set_ (e.g., ASCII characters a-z A-Z and arabic numerals 0-9) but substituties one for another or rearranges their order. For example, reversing the order of characters would encrypt `hello` as `olleh`. These methods are called **ciphers**
 *  **Encoding** is kind of the converse of encrypting in that it keeps the message the same, just represents it in a different way. For example, Morse code would encode `hello` as `.... . .-.. .-.. ---`. These methods are called **codings**
 
 That's basically it! To create an encoded/encrypted message, you do some combination of one or more of the above. To decrypt, you just do the opposite. The game then becomes, "how do I recoginize if I need to decrypt or decode, and which do I use?" To do that, we first can learn about common encryption and encoding techniques
@@ -24,7 +23,7 @@ The following is a quick summary of a few of the basic techniques. Encryption ca
 #### Rearranging: Reversing the order of characters
 `hello` as `olleh`
 
-#### Rearranging: Skip Characters
+#### Rearranging: Skip Characters, skip cipher
 In a **skip cipher** you write the message every _n_ characters. So id _n_=4: `abcdefgh` becomes `aebfcgdh` How to easily encrypt: write you message on mulitiple lines, each with _n_ characters. So, with _n_=4:
 ```
 abcd
@@ -39,10 +38,10 @@ dh
 ```
 Then reading the columns: `abcdefgh`
 
-#### Rearranging: Variants of Skip
+#### Rearranging: Variants of skip cipher
 There are plenty of variants to skip that play games with how many to skip at a time, which is why you'll see many online. For example, you can use a passcode to change _n_ after each character, you have a **transposition cipher** https://www.dcode.fr/transposition-cipher. You also can change _n_ in a clever way using a  **rail fence cipher** https://en.wikipedia.org/wiki/Rail_fence_cipher. Also, you don't always have to go from left to right, top to bottom, but the direction can change as well as in a **route/path cipher** https://www.dcode.fr/route-cipher. And there are many, many, more. The point here is that you may need to brute force trying different techniques until one "clicks." Luckily, there are many online tools to try out.
 
-#### Substitution: Rotating number of characters
+#### Substitution: Rotating number of characters, ROT ciphers
 You can encrypt a message by "rotating" a certain number of characters. Here, "rotating" means exchange every letter for one _n_ letters away on the alphabet. For example, recalling Arthur C. Clarke & Stanley Kubric, the letters `HAL` can be rotated 1 letter to give us `IBM`. The letter after `h` is `i`, and so one. The letter after `z` is `a`. This is called a **ROT cipher** https://www.dcode.fr/rot-cipher, the most common being **ROT13** or **Ceasar cipher**. Decrypting and encrypting  are the same, it's just that the decrypting and encrypting rotations have to equal 26. So **ROT1** encoding can be docded with **ROT25**. That's why **ROT13** is popular - it is encorypted and decrypted in the same way. Alternatively, you can encrypt a message by rotating _n_ to the left then decode by rotating _n_ to the right.
 
 #### Substitution: Variants on ROT ciphers
@@ -57,12 +56,14 @@ so `this is a message` encrpyted with the password `hello` is `altd wz e xpgzerp
 
 Like skip ciphers, there are many variants, and some times brute force approaches are necessary.
 
+#### Substitution: Atbash Cipher
+Another common substitution method is to flip the order of the alphabet. `a` becomes `z`, `b` becomes `y`, etc. This is known as the **Atbash Cipher** https://en.wikipedia.org/wiki/Atbash
 
 ### Common encoding techniques
-You can represent a message by changing the encoding of the message. Think of it as changing the character set from standard letters and numbers (a-z A-Z 0-9, or 62 different characters) to something else. There are many, many ways, but here are some common ones:
+Above we saw that **encryption** uses ciphers to change the order of characters or substitute one character for another. Below we'll show techniques where you can use different **encoding** methods to represent a message using different symbols or meanings behind the characters. You can therefore represent a message by changing the encoding of the message. Think of it as changing the character set from standard letters and numbers (a-z A-Z 0-9, or 62 different characters) to something else, or the same characters that mean something else (e.g., in hexadecimal, `A` means "ten"). There are many, many ways to do this, but here are some common ones:
 
 #### Morse Code
-Famous way of representing letters and numbers as dots, dashes, and spaces. https://www.dcode.fr/morse-code
+Morse code is an extremely common way of representing letters and numbers as dots, dashes, and spaces https://www.dcode.fr/morse-code
 
 #### ASCII Code
 There is a standard way or representing letters in binary so computers can understand them called "ASCII". This represents every character as a number https://en.wikipedia.org/wiki/ASCII http://www.asciitable.com/. Once you have that number, you can represent that number many different ways: as a binary number, decimal number, octal number, or hexadecimal number. For example `a` is `91` in decimal, which is `61` in hexadecimal (hex), `141` in octal, and `01100001` in binary. There are plenty of online tools to encode and decode for you, for example: https://multidec.web-lab.at/mc.php https://tools.decodeingress.me/#/basic.
@@ -84,46 +85,21 @@ Any string of binary numbers can be represented as "printable" characters using 
 How to recognize base64?
 * Consists of lower and uppercase letters a-z, A-Z, numbers 0-9, plus sign and slash + /, and equal sign =
 * If the last characters are equal signs, it is almost always base64 (or base32, see below).
-* `hello!` is `aGVsbG8=`
+* Example: `hello!` is `aGVsbG8=`
 
 
 There are many other variants of baseN that encodes 1s and 0s (or the ASCII binary 1s and 0s) in to other characters. It is good to research and get familiar with those on cyberchef, cryptii, and dcode.fr. What characters are used with which? For example, base32 uses only capital letters A-Z, numbers 2-7, and the equal sign =. https://www.dcode.fr/base-32-encoding
 
+## Steps to decode/decrypt a message
+Now that we get the "building blocks" for encoding, we can approach decoding!
+1. Do you have characters in the format you expect? For daily codes the game Ingress, your final code will be of the format: aaa##keyword###aa, that is 5 digits and the rest letters. So do you have 5 numbers and the rest letters? If so, use the **cipher** decryption methods above to translate and substitute until you have the solution. You may need a **password** to use some decryption methods (e.g., Vigenere), which may be hidden somewhere else.
+1. If you don't have the right/expected characters, you can try decoding the message using the **coding** schemes listed above. Manipulating it should give you something which characters and numbers expected.
+1. Go to step 1 until there is a solve.
 
-## Welcome to GitHub Pages
+### Example
+Let's check out `IXRuZW1uZXRoZ2lsbkUgZWh0IG5pb0o=` from our intro paragraph.
+1. It is unrecognizable text, but it consists only of a-z, A-Z, and ends in an equal sign - so maybe it's base64 **coding**! Use dcode.fr's base64 decoder and see what happens.
+1. Now I have something with punctuation, spaces, lower case letters, and one upper case letter - like a sentence! But the order seems wierd - the punctiation is at the front and the capital letter is in the back. This looks like the reverse **cipher**! Use dcode.fr or other tool to help you reverse it!
 
-You can use the [editor on GitHub](https://github.com/maqifrnswa/DecodingPrimer/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/maqifrnswa/DecodingPrimer/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Conculsion and Summary
+Now you can see the building blocks of solving these puzzles: use combinations of **ciphers** and **coding schemes** to manipulate one message to get another. **Ciphers** change the order of characters or substitute one character for another, **coding schemes** change the representation of one set of characters or symbols in to another set of characters or symbols. There are many, many ways of doing it, this just presented a few common ones to get the reader started, so now it's good to explore and learn as many as you can - both what they do and how they work!
