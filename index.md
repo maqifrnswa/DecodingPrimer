@@ -99,7 +99,7 @@ Now that we get the "building blocks" for encoding, we can approach decoding!
 ### Example
 Let's check out `IXRuZW1uZXRoZ2lsbkUgZWh0IG5pb0o=` from our intro paragraph.
 1. It is unrecognizable text, but it consists only of a-z, A-Z, 0-9, and ends in an equal sign - so maybe it's base64 **coding**! Use dcode.fr's base64 decoder and see what happens.
-1. Now I have something with punctuation, spaces, lower case letters, and one upper case letter - like a sentence! But the order seems weird - the punctuation is at the front and the capital letter is in the back. This looks like the reverse **cipher**! Use dcode.fr or another tool to help you reverse it!
+1. Now I have something with punctuation, spaces, lower case letters, and two upper case letters - like a sentence! But the order seems weird - the punctuation is at the front and a capital letter is in the back. This looks like the reverse **cipher**! Use dcode.fr or another tool to help you reverse it!
 
 ## Conclusion and Summary
 Now you can see the building blocks of solving these puzzles: use combinations of **ciphers** and **coding schemes** to manipulate one message to get another. **Ciphers** change the order of characters or substitute one character for another, **coding schemes** change the representation of one set of characters or symbols into another set of characters or symbols. There are many, many ways of doing it, this just presented a few common ones to get the reader started, so now it's good to explore and learn as many as you can - both what they do and how they work!
