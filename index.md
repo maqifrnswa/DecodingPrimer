@@ -29,7 +29,7 @@ In a **skip cipher** you write the message every _n_ characters. So id _n_=4: `a
 abcd
 efgh
 ```
-Then read the columns, from left to right: `ae` `bf` `cg` `dh`. To decode, write your message in rows and read down the columns. Here you may have to try different combinations to get it to work, or use something like https://multidec.web-lab.at/skip.php to do it for you for many combinations at once. For example: `aebfcgdh` is written as:
+Then read the columns, from left to right: `ae` `bf` `cg` `dh`. To decode, write your message in rows and read down the columns. Here you may have to try different combinations to get it to work, or use something like [https://multidec.web-lab.at/skip.php](https://multidec.web-lab.at/skip.php) to do it for you for many combinations at once. For example: `aebfcgdh` is written as:
 ```
 ae
 bf
@@ -39,14 +39,14 @@ dh
 Then reading the columns: `abcdefgh`
 
 #### Rearranging: Variants of skip cipher
-There are plenty of variants to skip that play games with how many to skip at a time, which is why you'll see many online. For example, you can use a passcode to change _n_ after each character, you have a **transposition cipher** https://www.dcode.fr/transposition-cipher. You also can change _n_ in a clever way using a  **rail fence cipher** https://en.wikipedia.org/wiki/Rail_fence_cipher. Also, you don't always have to go from left to right, top to bottom, but the direction can change as well as in a **route/path cipher** https://www.dcode.fr/route-cipher. And there are many, many, more. The point here is that you may need to brute force trying different techniques until one "clicks." Luckily, there are many online tools to try out.
+There are plenty of variants to skip that play games with how many to skip at a time, which is why you'll see many online. For example, you can use a passcode to change _n_ after each character, you have a **transposition cipher** [https://www.dcode.fr/transposition-cipher](https://www.dcode.fr/transposition-cipher). You also can change _n_ in a clever way using a  **rail fence cipher** [https://en.wikipedia.org/wiki/Rail_fence_cipher](https://en.wikipedia.org/wiki/Rail_fence_cipher). Also, you don't always have to go from left to right, top to bottom, but the direction can change as well as in a **route/path cipher** [https://www.dcode.fr/route-cipher](https://www.dcode.fr/route-cipher). And there are many, many, more. The point here is that you may need to brute force trying different techniques until one "clicks." Luckily, there are many online tools to try out.
 
 #### Substitution: Rotating number of characters, ROT ciphers
-You can encrypt a message by "rotating" a certain number of characters. Here, "rotating" means exchange every letter for one _n_ letters away on the alphabet. For example, recalling Arthur C. Clarke & Stanley Kubric, the letters `HAL` can be rotated 1 letter to give us `IBM`. The letter after `h` is `i`, and so one. The letter after `z` is `a`. This is called a **ROT cipher** https://www.dcode.fr/rot-cipher, the most common being **ROT13** or **Ceasar cipher**. Decrypting and encrypting  are the same, it's just that the decrypting and encrypting rotations have to equal 26. So **ROT1** encoding can be docded with **ROT25**. That's why **ROT13** is popular - it is encorypted and decrypted in the same way. Alternatively, you can encrypt a message by rotating _n_ to the left then decode by rotating _n_ to the right.
+You can encrypt a message by "rotating" a certain number of characters. Here, "rotating" means exchange every letter for one _n_ letters away on the alphabet. For example, recalling Arthur C. Clarke & Stanley Kubric, the letters `HAL` can be rotated 1 letter to give us `IBM`. The letter after `h` is `i`, and so one. The letter after `z` is `a`. This is called a **ROT cipher** [https://www.dcode.fr/rot-cipher](https://www.dcode.fr/rot-cipher), the most common being **ROT13** or **Ceasar cipher**. Decrypting and encrypting  are the same, it's just that the decrypting and encrypting rotations have to equal 26. So **ROT1** encoding can be docded with **ROT25**. That's why **ROT13** is popular - it is encorypted and decrypted in the same way. Alternatively, you can encrypt a message by rotating _n_ to the left then decode by rotating _n_ to the right.
 
 #### Substitution: Variants on ROT ciphers
 You can change the _n_ of the substitution with every character. For example, if you have a password, you can use that to 
-encrypt and decrypt a message. This is called **viginere cipher** https://www.dcode.fr/vigenere-cipher. I can use the password `hello` to encrypt a message, `this is a message`. First, convert `hello` in to the corresponding numbers of the letters that make up password: `h,e,l,l,o` is `8,5,12,12,15`. Then rotate the message by the corresponding numbers to the right
+encrypt and decrypt a message. This is called **viginere cipher** [https://www.dcode.fr/vigenere-cipher](https://www.dcode.fr/vigenere-cipher). I can use the password `hello` to encrypt a message, `this is a message`. First, convert `hello` in to the corresponding numbers of the letters that make up password: `h,e,l,l,o` is `8,5,12,12,15`. Then rotate the message by the corresponding numbers to the right
 ```
 msg: t  h  i  s    i  s    a    m  e  s  s  a  g  e
 ROT: 8  5 12 12   15  8    5   12 12 15  8  5 12 12
@@ -57,16 +57,16 @@ so `this is a message` encrpyted with the password `hello` is `altd wz e xpgzerp
 Like skip ciphers, there are many variants, and some times brute force approaches are necessary.
 
 #### Substitution: Atbash Cipher
-Another common substitution method is to flip the order of the alphabet. `a` becomes `z`, `b` becomes `y`, etc. This is known as the **Atbash Cipher** https://en.wikipedia.org/wiki/Atbash
+Another common substitution method is to flip the order of the alphabet. `a` becomes `z`, `b` becomes `y`, etc. This is known as the **Atbash Cipher** [https://en.wikipedia.org/wiki/Atbash](https://en.wikipedia.org/wiki/Atbash)
 
 ### Common encoding techniques
 Above we saw that **encryption** uses ciphers to change the order of characters or substitute one character for another. Below we'll show techniques where you can use different **encoding** methods to represent a message using different symbols or meanings behind the characters. You can therefore represent a message by changing the encoding of the message. Think of it as changing the character set from standard letters and numbers (a-z A-Z 0-9, or 62 different characters) to something else, or the same characters that mean something else (e.g., in hexadecimal, `A` means "ten"). There are many, many ways to do this, but here are some common ones:
 
 #### Morse Code
-Morse code is an extremely common way of representing letters and numbers as dots, dashes, and spaces https://www.dcode.fr/morse-code
+Morse code is an extremely common way of representing letters and numbers as dots, dashes, and spaces [https://www.dcode.fr/morse-code](https://www.dcode.fr/morse-code)
 
 #### ASCII Code
-There is a standard way or representing letters in binary so computers can understand them called "ASCII". This represents every character as a number https://en.wikipedia.org/wiki/ASCII http://www.asciitable.com/. Once you have that number, you can represent that number many different ways: as a binary number, decimal number, octal number, or hexadecimal number. For example `a` is `91` in decimal, which is `61` in hexadecimal (hex), `141` in octal, and `01100001` in binary. There are plenty of online tools to encode and decode for you, for example: https://multidec.web-lab.at/mc.php https://tools.decodeingress.me/#/basic.
+There is a standard way or representing letters in binary so computers can understand them called "ASCII". This represents every character as a number [https://en.wikipedia.org/wiki/ASCII](https://en.wikipedia.org/wiki/ASCII) [http://www.asciitable.com/](http://www.asciitable.com/). Once you have that number, you can represent that number many different ways: as a binary number, decimal number, octal number, or hexadecimal number. For example `a` is `91` in decimal, which is `61` in hexadecimal (hex), `141` in octal, and `01100001` in binary. There are plenty of online tools to encode and decode for you, for example: [https://multidec.web-lab.at/mc.php](https://multidec.web-lab.at/mc.php) [https://tools.decodeingress.me/#/basic](https://tools.decodeingress.me/#/basic).
 
 How do you recognize an ASCII code in a particular base?
 * Decimal: number values ranging from 32 to 126 are "printable" ASCII characters. `hello` is `104 101 108 108 111`
@@ -77,10 +77,10 @@ How do you recognize an ASCII code in a particular base?
 
 #### A1Z26 Coding
 
-You can represent every letter in the alphabet with the number of the order of the alphabet. For example, the first letter is `a` and the 26th is `z`, so the character `a` gets the number 1 and `z` gets the number 26. The word `hello` is therefore encoded as `8 5 12 12 15`.  https://www.dcode.fr/letter-number-cipher
+You can represent every letter in the alphabet with the number of the order of the alphabet. For example, the first letter is `a` and the 26th is `z`, so the character `a` gets the number 1 and `z` gets the number 26. The word `hello` is therefore encoded as `8 5 12 12 15`.  [https://www.dcode.fr/letter-number-cipher](https://www.dcode.fr/letter-number-cipher)
 
 #### Base64 (and other BaseN) coding
-Any string of binary numbers can be represented as "printable" characters using base64 encoding. This is a great trick encoders use to convert almost anything with two characters in to readable text https://en.wikipedia.org/wiki/Base64. A common use of base64 is to take an ASCII sequence of characters, encode it as a binary sequence of 1s and 0s, and convert that in to base64. All of this can easily be handled by many online tools, such as https://tools.decodeingress.me/#/basic.
+Any string of binary numbers can be represented as "printable" characters using base64 encoding. This is a great trick encoders use to convert almost anything with two characters in to readable text [https://en.wikipedia.org/wiki/Base64](https://en.wikipedia.org/wiki/Base64). A common use of base64 is to take an ASCII sequence of characters, encode it as a binary sequence of 1s and 0s, and convert that in to base64. All of this can easily be handled by many online tools, such as [https://tools.decodeingress.me/#/basic](https://tools.decodeingress.me/#/basic).
 
 How to recognize base64?
 * Consists of lower and uppercase letters a-z, A-Z, numbers 0-9, plus sign and slash + /, and equal sign =
@@ -88,7 +88,7 @@ How to recognize base64?
 * Example: `hello!` is `aGVsbG8=`
 
 
-There are many other variants of baseN that encodes 1s and 0s (or the ASCII binary 1s and 0s) in to other characters. It is good to research and get familiar with those on cyberchef, cryptii, and dcode.fr. What characters are used with which? For example, base32 uses only capital letters A-Z, numbers 2-7, and the equal sign =. https://www.dcode.fr/base-32-encoding
+There are many other variants of baseN that encodes 1s and 0s (or the ASCII binary 1s and 0s) in to other characters. It is good to research and get familiar with those on cyberchef, cryptii, and dcode.fr. What characters are used with which? For example, base32 uses only capital letters A-Z, numbers 2-7, and the equal sign =. [https://www.dcode.fr/base-32-encoding](https://www.dcode.fr/base-32-encoding)
 
 ## Steps to decode/decrypt a message
 Now that we get the "building blocks" for encoding, we can approach decoding!
