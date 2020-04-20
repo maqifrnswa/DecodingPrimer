@@ -12,6 +12,7 @@ Then you can use tools such as:
 * [MultiDec](https://multidec.web-lab.at/)
 * [dcode.fr](https://www.dcode.fr/)
 * [decodeingress.me](https://tools.decodeingress.me/#/)
+* [CyberChef](https://gchq.github.io/CyberChef/)
 
 
 ## How to encrypt/encode a message
@@ -105,7 +106,7 @@ There are many other variants of baseN that encode 1s and 0s (or the ASCII binar
 
 ## Steps to decode/decrypt a message
 Now that we get the "building blocks" for encoding, we can approach decoding!
-1. Do you have characters in the format you expect? For daily codes in the game Ingress, your final code will be of the format: aaa##keyword###aa, that is 5 digits and the rest letters. So do you have 5 numbers and the rest letters? If so, use the **cipher** decryption methods above to translate and substitute until you have the solution. You may need a **password** to use some decryption methods (e.g., Vigenere), which may be hidden somewhere else.
+1. Do you have characters in the format you expect? For daily codes in the game Ingress, your final code will be of the format: `aaa##keyword###aa`, that is 5 digits and the rest letters. So do you have 5 numbers and the rest letters? If so, use the **cipher** decryption methods above to translate and substitute until you have the solution. You may need a **password** to use some decryption methods (e.g., Vigenere), which may be hidden somewhere else.
 1. If you don't have the right/expected characters, you can try decoding the message using the **coding** schemes listed above. Manipulating it should give you something with characters and numbers as expected.
 1. Go to step 1 until there is a solution.
 
