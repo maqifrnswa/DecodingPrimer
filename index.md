@@ -12,14 +12,47 @@ This is an intro on how one can start getting in to decoding games. While there 
 
 To figure out how to decode, you first have to know how a messages are encoded in the first place. To make things easier, you can think of encoding as some combination of the following 2 processes:
 
-* **Encrypting** is taking the message and rearranging or substituting the characters to hide a message. In other words, encrypting keeps the same _character set_ (e.g., ASCII characters a-z A-Z and arabic numerals 0-9) but changes their meaning or order. For example, reversing the order of characters would encrypt `hello` as `olleh` 
-*  **Encoding** is kind of the converse of encrypting in that it keeps the message the same, just represents it in a different way. For example, Morse code would encode `hello` as `.... . .-.. .-.. ---`
+* **Encrypting** is taking the message and rearranging or substituting the characters to hide a message. In other words, encrypting keeps the same _character set_ (e.g., ASCII characters a-z A-Z and arabic numerals 0-9) but changes their meaning or order. For example, reversing the order of characters would encrypt `hello` as `olleh`. These methods are called **ciphers**
+*  **Encoding** is kind of the converse of encrypting in that it keeps the message the same, just represents it in a different way. For example, Morse code would encode `hello` as `.... . .-.. .-.. ---`. These methods are called **codings**
 
 That's basically it! To create an encoded/encrypted message, you do some combination of one or more of the above. To decrypt, you just do the opposite. The game then becomes, "how do I recoginize if I need to decrypt or decode, and which do I use?" To do that, we first can learn about common encryption and encoding techniques
 
 ### Common encryption techniques
 
-### Common
+The following is a quick summary of a few of the basic techniques. Encryption can generally be thought of as one of two techniques: (a) some sort of rearranging of the order and (b) substituting letters for others. Given a message, you can hide its meaning by doing things like:
+
+#### Rearranging: Reversing the order of characters
+`hello` as `olleh`
+
+#### Rearranging: Skip Characters
+In a **skip cipher** you write the message every _n_ characters. So id _n_=4: `abcdefgh` becomes `aebfcgdh` How to easily encrypt: write you message on mulitiple lines, each with _n_ characters. So, with _n_=4:
+```
+abcd
+efgh
+```
+Then read the columns, from left to right: `ae` `bf` `cg` `dh`. To decode, write your message in rows and read down the columns. Here you may have to try different combinations to get it to work, or use something like https://multidec.web-lab.at/skip.php to do it for you for many combinations at once. For example: `aebfcgdh` is written as:
+```
+ae
+bf
+cg
+dh
+```
+Then reading the columns: `abcdefgh`
+
+### Rearranging: Variants of Skip
+There are plenty of variants to skip that play games with how many to skip at a time, which is why you'll see many online. For example, you can use a passcode to change _n_ after each character, you have a **transposition cipher** https://www.dcode.fr/transposition-cipher. You also can change _n_ in a clever way using a  **rail fence cipher** https://en.wikipedia.org/wiki/Rail_fence_cipher. Also, you don't always have to go from left to right, top to bottom, but the direction can change as well as in a **route/path cipher** https://www.dcode.fr/route-cipher. And there are many, many, more. The point here is that you may need to brute force trying different techniques until one "clicks." Luckily, there are many online tools to try out.
+
+### Substitution: Rotating number of characters
+You can encrypt a message by "rotating" a certain number of characters. Here, "rotating" means exchange every letter for one _n_ letters away on the alphabet. For example, recalling Arthur C. Clarke & Stanley Kubric, the letters `HAL` can be rotated 1 letter to give us `IBM`. The letter after `h` is `i`, and so one. The letter after `z` is `a`. This is called a **ROT cipher** https://www.dcode.fr/rot-cipher, the most common being **ROT13** or **Ceasar cipher**. Decrypting and encrypting  are the same, it's just that the decrypting and encrypting rotations have to equal 26. So **ROT1** encoding can be docded with **ROT25**. That's why **ROT13** is popular - it is encorypted and decrypted in the same way. Alternatively, you can encrypt a message by rotating _n_ to the left then decode by rotating _n_ to the right.
+
+### Substitution: Variants on ROT ciphers
+You can change the _n_ of the substitution with every character. For example, if you have a password, you can use that to 
+encrypt and decrypt a message. This is called **viginere cipher** https://www.dcode.fr/vigenere-cipher.
+
+
+#### Shift
+
+### Common encoding techniques
 
 ## Welcome to GitHub Pages
 
