@@ -46,7 +46,7 @@ You can encrypt a message by "rotating" a certain number of characters. Here, "r
 
 #### Substitution: Variants on ROT ciphers
 You can change the _n_ of the substitution with every character. For example, if you have a password, you can use that to 
-encrypt and decrypt a message. This is called **viginere cipher** [https://www.dcode.fr/vigenere-cipher](https://www.dcode.fr/vigenere-cipher). I can use the password `hello` to encrypt a message, `this is a message`. First, convert `hello` in to the corresponding numbers of the letters that make up password: `h,e,l,l,o` is `8,5,12,12,15`. Then rotate the message by the corresponding numbers to the right
+encrypt and decrypt a message. This is called **Viginere cipher** [https://www.dcode.fr/vigenere-cipher](https://www.dcode.fr/vigenere-cipher). I can use the password `hello` to encrypt a message, `this is a message`. First, convert `hello` in to the corresponding numbers of the letters that make up password: `h,e,l,l,o` is `8,5,12,12,15`. Then rotate the message by the corresponding numbers to the right
 ```
 msg: t  h  i  s    i  s    a    m  e  s  s  a  g  e
 ROT: 8  5 12 12   15  8    5   12 12 15  8  5 12 12
