@@ -65,19 +65,29 @@ You can represent a message by changing the encoding of the message. Think of it
 Famous way of representing letters and numbers as dots, dashes, and spaces. https://www.dcode.fr/morse-code
 
 #### ASCII Code
-There is a standard way or representing letters in binary so computers can understand them called "ASCII". This represents every character as a number https://en.wikipedia.org/wiki/ASCII http://www.asciitable.com/. Once you have that number, you can represent that number many different ways: as a binary number, decimal number, octal number, or hexadecimal number. For example `a` is `91` in decimal, which is `61` in hexadecimal (hex), `141` in octal, and `01100001` in binary. There are plenty of online tools to encode and decode for you, for example: https://multidec.web-lab.at/mc.php.
+There is a standard way or representing letters in binary so computers can understand them called "ASCII". This represents every character as a number https://en.wikipedia.org/wiki/ASCII http://www.asciitable.com/. Once you have that number, you can represent that number many different ways: as a binary number, decimal number, octal number, or hexadecimal number. For example `a` is `91` in decimal, which is `61` in hexadecimal (hex), `141` in octal, and `01100001` in binary. There are plenty of online tools to encode and decode for you, for example: https://multidec.web-lab.at/mc.php https://tools.decodeingress.me/#/basic.
 
 How do you recognize an ASCII code in a particular base?
+* Decimal: number values ranging from 32 to 126 are "printable" ASCII characters. `hello` is `104 101 108 108 111`
+* Hex: Are two-character sequences consisting of a digit and a letter from A-F. Printable characters have the first digit in the range of 2-7. (i.e, `30` is corresponds to the number 0). `hello` is `68 65 6c 6c 6f`
+* Octal: 3 digit numbers consisting of the digits 0-7. Printable characters start at 040 and end at 176. `hello` is `150 145 154 154 157`
+* Binary: Groups of 7 digit or 8 digit sequence of 1s and 0s. If 8 digit sequence, the first digit is a 0. `hello` is `01101000 01100101 01101100 01101100 01101111`
 
-* Decimal: number values ranging from 32 to 126 are "printable" ASCII characters.
-* Hex: Are two-character sequences consisting of a digit and a letter from A-F. Printable characters have the first digit in the range of 2-7. (i.e, `30` is corresponds to the number 0.
-* Octal: 3 digit numbers consisting of the digits 0-7. Printable characters start at 040 and end at 176.
-* Binary: 7 digit or 8 digit sequence of 1s and 0s. If 8 digit sequence, the first digit is a 0.
 
+#### A1Z26 Coding
 
-#### A1Z26
+You can represent every letter in the alphabet with the number of the order of the alphabet. For example, the first letter is `a` and the 26th is `z`, so the character `a` gets the number 1 and `z` gets the number 26. The word `hello` is therefore encoded as `8 5 12 12 15`.  https://www.dcode.fr/letter-number-cipher
 
 #### Base64 (and other BaseN) coding
+Any string of binary numbers can be represented as "printable" characters using base64 encoding. This is a great trick encoders use to convert almost anything with two characters in to readable text https://en.wikipedia.org/wiki/Base64. A common use of base64 is to take an ASCII sequence of characters, encode it as a binary sequence of 1s and 0s, and convert that in to base64. All of this can easily be handled by many online tools, such as https://tools.decodeingress.me/#/basic.
+
+How to recognize base64?
+* Consists of lower and uppercase letters a-z, A-Z, numbers 0-9, plus sign and slash + /, and equal sign =
+* If the last characters are equal signs, it is almost always base64 (or base32, see below).
+* `hello!` is `aGVsbG8=`
+
+
+There are many other variants of baseN that encodes 1s and 0s (or the ASCII binary 1s and 0s) in to other characters. It is good to research and get familiar with those on cyberchef, cryptii, and dcode.fr. What characters are used with which? For example, base32 uses only capital letters A-Z, numbers 2-7, and the equal sign =. https://www.dcode.fr/base-32-encoding
 
 
 ## Welcome to GitHub Pages
