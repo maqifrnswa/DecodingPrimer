@@ -13,6 +13,8 @@ Then you can use tools such as:
 * [dcode.fr](https://www.dcode.fr/)
 * [decodeingress.me](https://tools.decodeingress.me/#/)
 * [CyberChef](https://gchq.github.io/CyberChef/)
+* [Rumkin Cipher Tools](http://rumkin.com/tools/cipher/)
+* [FotoForensics](http://fotoforensic.com/)
 * [ingress.codes compiled list](https://ingress.codes/2016/05/19/useful-tools-and-weblinks-for-decoding/)
 
 
