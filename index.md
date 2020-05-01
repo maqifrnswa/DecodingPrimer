@@ -120,3 +120,6 @@ Let's check out `IXRuZW1uZXRoZ2lsbkUgZWh0IG5pb0o=` from our intro paragraph.
 
 ## Conclusion and Summary
 Now you can see the building blocks of solving these puzzles: use combinations of **ciphers** and **coding schemes** to manipulate one message to get another. **Ciphers** change the order of characters or substitute one character for another, **coding schemes** change the representation of one set of characters or symbols into another set of characters or symbols. There are many, many ways of doing it, this just presented a few common ones to get the reader started, so now it's good to explore and learn as many as you can - both what they do and how they work!
+
+### Next step?
+Want to try more puzzles? Check out [ingress.codes](https://ingress.codes) for a collection of previous puzzles with solution walkthroughs.
