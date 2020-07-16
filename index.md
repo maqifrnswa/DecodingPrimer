@@ -17,6 +17,8 @@ Then you can use tools such as:
 * [FotoForensics](http://fotoforensic.com/)
 * [ingress.codes compiled list](https://ingress.codes/2016/05/19/useful-tools-and-weblinks-for-decoding/)
 
+This page has been translated in to:
+* [Portuguesa](https://decodebr.now.sh/)
 
 ## How to encrypt/encode a message
 
