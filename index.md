@@ -96,10 +96,10 @@ How do you recognize an ASCII code in a particular base?
 
 #### A1Z26 Coding
 
-You can represent every letter in the alphabet with the number of the order of the alphabet. For example, the first letter is `a` and the 26th is `z`, so the character `a` gets the number 1 and `z` gets the number 26. The word `hello` is therefore encoded as `8 5 12 12 15`.  For example, see [dcode.fr's tool](https://www.dcode.fr/letter-number-cipher)
+You can represent every letter in the alphabet with the number of the order of the alphabet. For example, the first letter is `a` and the 26th is `z`, so the character `a` gets the number 1 and `z` gets the number 26. The word `hello` is therefore encoded as `8 5 12 12 15`.  For example, see [dcode.fr's tool](https://www.dcode.fr/letter-number-cipher).
 
 #### Base64 (and other BaseN) coding
-Any string of binary numbers can be represented as "printable" characters using **[base64 encoding](https://en.wikipedia.org/wiki/Base64)**. This is a great trick encoders use to convert almost anything with two symbols (e.g., binary) into readable text. A common use of base64 is to take an ASCII sequence of characters, encode it as a binary sequence of 1s and 0s, and convert that into base64. All of this can easily be handled by many online tools, such as [decodeingress.me's tools.](https://tools.decodeingress.me/#/basic).
+Any string of binary numbers can be represented as "printable" characters using **[base64 encoding](https://en.wikipedia.org/wiki/Base64)**. This is a great trick encoders use to convert almost anything with two symbols (e.g., binary) into readable text. A common use of base64 is to take an ASCII sequence of characters, encode it as a binary sequence of 1s and 0s, and convert that into base64. All of this can easily be handled by many online tools, such as [decodeingress.me's tools](https://tools.decodeingress.me/#/basic). Another good tool for decoding different bases (and stringing the output of one to the input of another, among many other things) is [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=UkdWamIyUmxVSEpwYldWeUlITmhlWE1nYUdraA).
 
 How to recognize base64?
 * Consists of lower and uppercase letters a-z, A-Z, numbers 0-9, plus sign and slash + /, and equal sign =
@@ -107,7 +107,7 @@ How to recognize base64?
 * Example: `hello` is `aGVsbG8=`
 
 
-There are many other variants of baseN that encode 1s and 0s (or the ASCII binary 1s and 0s) into other characters. It is good to research and get familiar with those on cyberchef, cryptii, and dcode.fr. What characters are used with which? For example, base32 uses only capital letters A-Z, numbers 2-7, and the equal sign =. For example, see [dcode.fr's tool](https://www.dcode.fr/base-32-encoding)
+There are many other variants of baseN that encode 1s and 0s (or the ASCII binary 1s and 0s) into other characters. It is good to research and get familiar with those on cyberchef, cryptii, and dcode.fr. What characters are used with which? For example, base32 uses only capital letters A-Z, numbers 2-7, and the equal sign =. For example, see [dcode.fr's tool](https://www.dcode.fr/base-32-encoding). Additionally, [CyberChef magic](https://gchq.github.io/CyberChef/#recipe=Magic(3,false,false,'')&input=VTlpRWNCUzRrY0ZiQURzZml0YkxCREc1clI2aVV0NXdLSw) can be used to guess which base to use [if you don't know the exact one](https://gchq.github.io/CyberChef/#recipe=From_Base58('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',false)&input=VTlpRWNCUzRrY0ZiQURzZml0YkxCREc1clI2aVV0NXdLSw).
 
 ## Steps to decode/decrypt a message
 Now that we get the "building blocks" for encoding, we can approach decoding!
